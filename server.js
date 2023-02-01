@@ -9,11 +9,12 @@ require("./src/config/dbConnect");
 
 
 const app = express();
+const apiUrl = process.env.API_URL || '/api/v1';
 
 //middlewares
 app.use(express.json()); 
 
-app.use("/api/v1/test", testOneRouter);
+app.use(`${apiUrl}/test`, testOneRouter);
 
 //Error handlers middleware
 app.use(globalErrHandler);
