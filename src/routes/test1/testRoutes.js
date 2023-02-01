@@ -5,6 +5,6 @@ const { testOneCtrl, testTwoCtrl } = require("../../controllers/test1/testOneCtr
 const testOneRouter = express.Router();
 
 testOneRouter.get("/", testOneCtrl);
-testOneRouter.get("/", testTwoCtrl);
+testOneRouter.post("/", testTwoCtrl);
 
 module.exports = testOneRouter;
