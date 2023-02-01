@@ -10,6 +10,19 @@ const testOneCtrl = async (req, res) => {
   }
 };
 
+const testTwoCtrl = async (req, res) => {
+  const { value } = req.body;
+  try {
+    res.json({
+      status: "success",
+      data: { value: value },
+    });
+  } catch (error) {
+    res.json(error.message);
+  }
+};
+
 module.exports = {
   testOneCtrl,
+  testTwoCtrl
 };
