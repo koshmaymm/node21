@@ -5,7 +5,8 @@ const testOneRouter = require("./src/routes/test1/testRoutes");
 
 
 require("dotenv").config();
-// require("./app/config/dbConnect");
+require("./src/config/dbConnect");
+
 
 const app = express();
 
