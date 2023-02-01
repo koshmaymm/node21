@@ -1,4 +1,5 @@
 const express = require("express");
+const globalErrHandler = require("./src/middlewares/globalErrHandler");
 
 const testOneRouter = require("./src/routes/test1/testRoutes");
 
@@ -14,7 +15,7 @@ app.use(express.json());
 app.use("/api/v1/test", testOneRouter);
 
 //Error handlers middleware
-// app.use(globalErrHandler);
+app.use(globalErrHandler);
 
 //404 error
 app.use("*", (req, res) => {
