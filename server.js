@@ -2,6 +2,7 @@ const express = require("express");
 const globalErrHandler = require("./src/middlewares/globalErrHandler");
 
 const testOneRouter = require("./src/routes/test1/testRoutes");
+const userRouter = require("./src/routes/users/userRoutes");
 
 
 require("dotenv").config();
@@ -15,6 +16,9 @@ const apiUrl = process.env.API_URL || '/api/v1';
 app.use(express.json()); 
 
 app.use(`${apiUrl}/test`, testOneRouter);
+
+//users route
+app.use(`${apiUrl}/users`, userRouter);
 
 //Error handlers middleware
 app.use(globalErrHandler);
